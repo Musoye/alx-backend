@@ -1,4 +1,4 @@
-#!/usr/biin/ env python3
+#!/usr/bin/env python3
 """Create a simple pagination"""
 
 
