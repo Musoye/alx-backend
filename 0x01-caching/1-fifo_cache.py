@@ -1,9 +1,6 @@
 #!/usr/bin/env python3
-"""Base cache algorithm"""
-
-
-
-BaseCaching = __import__('base_caching').BaseCaching
+"""Fifo caching algorithm, first in first out"""
+from base_caching import BaseCaching
 
 
 class FIFOCache(BaseCaching):
@@ -13,9 +10,9 @@ class FIFOCache(BaseCaching):
         """Initialization function"""
         super().__init__()
 
-    def put(self, key, item) -> None:
+    def put(self, key, item):
         """set a caching value"""
-        if key is not None and item is not None:
+        if key and item:
             if len(self.cache_data) > (BaseCaching.MAX_ITEMS - 1):
                 self.cache_data[key] = item
                 first_key = list(self.cache_data.keys())[0]
@@ -25,6 +22,6 @@ class FIFOCache(BaseCaching):
                 self.cache_data[key] = item
 
     def get(self, key):
-        if key is not None:
+        if key:
             return self.cache_data.get(key)
         return None

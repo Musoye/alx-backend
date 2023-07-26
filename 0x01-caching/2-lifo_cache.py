@@ -1,10 +1,6 @@
 #!/usr/bin/env python3
 """Base cache algorithm"""
-
-
-from typing import Union
-
-BaseCaching = __import__('base_caching').BaseCaching
+from base_caching import BaseCaching
 
 
 class LIFOCache(BaseCaching):

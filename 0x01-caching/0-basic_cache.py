@@ -1,25 +1,17 @@
 #!/usr/bin/env python3
-"""Base cache algorithm"""
-
-
-from typing import Union
-
-BaseCaching = __import__('base_caching').BaseCaching
+"""Base cache algorithm, The basic cahing """
+from base_caching import BaseCaching
 
 
 class BasicCache(BaseCaching):
     """A class for basic caching"""
 
-    def __init__(self):
-        """Initialization function"""
-        super().__init__()
-
-    def put(self, key, item) -> None:
+    def put(self, key, item):
         """set a caching value"""
-        if key is not None and item is not None:
+        if key and item:
             self.cache_data[key] = item
 
     def get(self, key):
-        if key is not None:
+        if key:
             return self.cache_data.get(key)
         return None
