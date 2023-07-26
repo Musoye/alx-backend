@@ -7,7 +7,7 @@ from typing import Union
 BaseCaching = __import__('base_caching').BaseCaching
 
 
-class FIFOCache(BaseCaching):
+class LRUCache(BaseCaching):
     """A class for FIFO caching"""
 
     def __init__(self):
@@ -26,6 +26,9 @@ class FIFOCache(BaseCaching):
                 self.cache_data[key] = item
 
     def get(self, key):
-        if key is not None:
-            return self.cache_data.get(key)
+        if key and key is self.cache_data.keys():
+            item = self.cahe_data.get(key)
+            self.cache_data.pop(key)
+            self.cache_data[key] = item
+            return item
         return None
