@@ -12,6 +12,7 @@ class BasicCache(BaseCaching):
             self.cache_data[key] = item
 
     def get(self, key):
+        """The get method"""
         if key:
             return self.cache_data.get(key)
         return None
