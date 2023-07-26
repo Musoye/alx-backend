@@ -2,7 +2,6 @@
 """Base cache algorithm"""
 
 
-from typing import Union
 
 BaseCaching = __import__('base_caching').BaseCaching
 
