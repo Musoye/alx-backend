@@ -17,8 +17,7 @@ class LFUCache(BaseCaching):
             if len(self.cache_data) > (BaseCaching.MAX_ITEMS - 1):
                 min_value = None
                 for k in self.cache_data.keys():
-                    if min_value is None or (
-                        min_value >= self._count.get(k)):
+                    if min_value is None or (min_value >= self._count.get(k)):
                         min_value = self._count.get(k)
                 min_keys = [key for key in self.cache_data
                             if self._count[key] == min_value]
