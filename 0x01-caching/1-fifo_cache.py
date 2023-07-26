@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """Fifo caching algorithm, first in first out"""
 from base_caching import BaseCaching
 

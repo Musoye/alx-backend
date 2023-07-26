@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """Base cache algorithm"""
 from base_caching import BaseCaching
 
