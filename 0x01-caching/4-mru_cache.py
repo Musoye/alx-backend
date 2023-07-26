@@ -3,8 +3,8 @@
 from base_caching import BaseCaching
 
 
-class LRUCache(BaseCaching):
-    """A class for LRU caching"""
+class MRUCache(BaseCaching):
+    """A class for MRU caching"""
 
     def __init__(self):
         """Initialization function"""
@@ -14,7 +14,7 @@ class LRUCache(BaseCaching):
         """set a caching value"""
         if key and item:
             if len(self.cache_data) > (BaseCaching.MAX_ITEMS - 1):
-                first_key = list(self.cache_data.keys())[0]
+                first_key = list(self.cache_data.keys())[-1]
                 self.cache_data.pop(first_key)
                 print("DISCARD: {}".format(first_key))
                 self.cache_data[key] = item
