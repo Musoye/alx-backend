@@ -32,7 +32,7 @@ def get_locale():
     return request.accept_languages.best_match(app.config['LANGUAGES'])
 
 
-@app.route('/', )
+@app.route('/', strict_slashes=False)
 def index():
     """The index page being setting up"""
     return render_template('4-index.html')
